@@ -71,19 +71,19 @@ const Gallery = () => {
   // Gallery images
   const images = [
     {
-      src: "https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
+      src: "/assets/images/Gallery-img2.jpg",
       alt: "Fireworks"
     },
     {
-      src: "https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+      src: "/assets/images/Gallery-img3.jpg",
       alt: "Concert"
     },
     {
-      src: "https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+      src: "/assets/images/Gallery-img4.jpg",
       alt: "Food"
     },
     {
-      src: "https://images.pexels.com/photos/1597447/pexels-photo-1597447.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
+      src: "/assets/images/Gallery-img5.jpg",
       alt: "Carnival ride"
     }
   ];
@@ -92,7 +92,7 @@ const Gallery = () => {
     <section className="py-16 md:py-20 bg-[#101010]">
       <div className="max-w-7xl mx-auto px-4 md:px-1">
         <div className="text-center mb-12">
-          <h2 className="font-bold text-3xl md:text-5xl font-bold text-white uppercase tracking-wide">GALLERY</h2>
+          <h2 className="font-bold text-3xl md:text-5xl text-white uppercase tracking-wide">GALLERY</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[24px] w-full">
           {/* Column 1: Video */}
@@ -101,7 +101,7 @@ const Gallery = () => {
               ref={videoRef}
               className="w-full h-full object-cover"
               onEnded={handleVideoEnded}
-              poster="https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
+              poster="/assets/images/Gallery-img1.jpg"
             >
               <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
               Your browser does not support the video tag.

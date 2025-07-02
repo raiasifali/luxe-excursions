@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const ExcursionBanner = () => (
   <section className="py-20 text-white relative bg-cover bg-center mx-5 lg:mx-[60px] mt-24 rounded-[20px]" style={{
@@ -13,7 +13,7 @@ const ExcursionBanner = () => (
         Embark on an extraordinary journey with Luxe Excursions Tenerife, where we specialise in crafting bespoke luxury experiences that showcase the island's breathtaking beauty. From exclusive yacht charters to exhilarating adventures and unforgettable parties, we transform travel dreams into cherished memories, ensuring every moment is infused with excitement and joy.
       </p>
       <Button className="bg-[#E0C469] font-poltawski text-[#252525] hover:bg-gray-100 px-10 py-5 text-lg">
-        <Link to="/excursions">View Excursions</Link>
+        <Link href="/excursions">View Excursions</Link>
       </Button>
     </div>
   </section>

@@ -83,6 +83,13 @@ const config: Config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      fontFamily: {
+        'playfair': ['var(--font-playfair)', 'Playfair Display', 'serif'],
+        'inter': ['var(--font-inter)', 'Inter', 'sans-serif'],
+        'anton': ['var(--font-anton)', 'Anton', 'sans-serif'],
+        'poltawski': ['Poltawski Nowy', 'serif'],
+        'publicsans': ['var(--font-publicsans)', 'Public Sans', 'sans-serif'],
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],

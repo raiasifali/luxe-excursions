@@ -58,7 +58,7 @@ export function Navigation({ theme = 'dark' }: NavbarProps) {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-yellow-500 bg-clip-text text-transparent">
-              <img src="https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&w=60&h=52&fit=crop" alt="Luxe Excursions" className="w-[60px] h-[52px] rounded-lg object-cover" />
+              <img src="/assets/images/Header-2-Logo.svg" alt="Luxe Excursions" className="w-[60px] h-[52px] rounded-lg object-cover" />
             </span>
           </Link>
 

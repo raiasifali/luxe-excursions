@@ -11,24 +11,18 @@ export function Footer() {
         <div className="flex justify-between items-center mb-12">
           <div className="flex items-center">
             <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-yellow-500 bg-clip-text text-transparent">
-              <img src="https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&w=60&h=52&fit=crop" alt="Luxe Excursions" className="w-[60px] h-[52px] rounded-lg object-cover" />
+              <img src="/assets/images/Header-2-Logo.svg" alt="Luxe Excursions" className="w-[60px] h-[52px] rounded-lg object-cover" />
             </span>
           </div>
           <div className="flex items-center space-x-4">
             <Link href="#" className="text-white hover:text-amber-600 transition-colors">
-              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white text-sm font-bold">f</span>
-              </div>
+                <img src="assets/images/Facebook 2.svg" alt="fb" />
             </Link>
             <Link href="#" className="text-white hover:text-amber-600 transition-colors">
-              <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-sm font-bold">ig</span>
-              </div>
+                <img src="assets/images/instax.svg" alt="fb" />
             </Link>
             <Link href="#" className="text-white hover:text-amber-600 transition-colors">
-              <div className="w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center">
-                <span className="text-white text-sm font-bold">t</span>
-              </div>
+                <img src="assets/images/Twitter 2.svg" alt="fb" />
             </Link>
           </div>
         </div>

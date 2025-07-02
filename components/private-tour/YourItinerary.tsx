@@ -19,7 +19,7 @@ const itinerary = [
         text: 'Kick off your holiday with dinner at a local restaurant, where you can savour traditional Canarian cuisine while soaking in the vibrant atmosphere of Tenerife. We can advice and book a list of high end restaurants and can provide transfers.'
       }
     ],
-    image: 'https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=343&h=514&fit=crop',
+    image: '/assets/images/Itinerary.svg',
     date: 'Day 1: Mon, 8 August 2024'
   },
   { title: 'Private Yacht Charter' },
@@ -46,7 +46,7 @@ const YourItinerary = () => {
               <span className={idx === 0 ? 'font-bold flex-grow text-left' : 'font-normal flex-grow text-left'}>
                 {idx + 1}. {step.title}
               </span>
-              <span className="text-black">↗</span>
+              <img src="/assets/images/Arrow-up.svg" alt="Arrow-up" />
             </Button>
           ))}
         </div>
@@ -62,7 +62,7 @@ const YourItinerary = () => {
         <div className="flex flex-col items-start xl:w-[448px] w-full h-auto xl:h-[514px] gap-[77px]">
           <div className="flex flex-col gap-[20px] w-full">
             <span className="flex flex-row items-center px-[20px] py-[8px] gap-[8px] w-[242px] h-[40px] bg-[#F5F5F5] rounded-[12px] text-[14px] font-medium text-[#252525] mb-0">
-              <Calendar className="w-4 h-4 text-gray-500" />
+              <img src="/assets/images/Calender-grey.svg" alt="" />
               {itinerary[0].date}
             </span>
             {itinerary[0].details.map((section, idx) => (
@@ -78,7 +78,7 @@ const YourItinerary = () => {
           </div>
           <Button className="flex flex-row justify-center items-center gap-[12px] w-[204px] h-[64px] px-[40px] py-[20px] bg-[#E0C469] hover:bg-[#E0C469]/90 rounded-[8px] font-bold text-[18px] leading-[120%] text-[#2C2C2C] mt-0">
             Book Now
-            <span className="text-black">↗</span>
+            <img src="/assets/images/Arrow-up.svg" alt="Arrow-up" />
           </Button>
         </div>
       </div>

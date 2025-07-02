@@ -1,10 +1,14 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Anton, Playfair_Display, Public_Sans } from 'next/font/google';
 import { Navigation } from '@/components/navigation';
-import { Footer } from '@/components/footer';
+import { Footer } from '@/components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const anton = Anton({ subsets: ['latin'], weight: '400', variable: '--font-anton' });
+const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
+const publicsans = Public_Sans({ subsets: ['latin'], variable: '--font-publicsans' });
+// Poltawski Nowy is not available in next/font/google, so use a <link> in <head> if needed
 
 export const metadata: Metadata = {
   title: 'Luxe Excursions Tenerife - Premium Travel Experiences',
@@ -17,8 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={`${inter.variable} ${anton.variable} ${playfair.variable} ${publicsans.variable}`}>
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Poltawski+Nowy:wght@400;700&display=swap" rel="stylesheet" />
+      </head>
+      <body>
         <Navigation theme="light" />
         <main className="min-h-screen">
           {children}

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const ExcursionBanner = () => (
   <section className="py-20 text-white relative bg-cover bg-center mx-5 lg:mx-[60px] mt-24 rounded-[20px]" style={{
-    backgroundImage: "url('https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop')"
+    backgroundImage: "url('/assets/images/our-excursion-image.png')"
   }}>
     <div className="absolute inset-0 bg-black/50 rounded-[20px]"></div>
     <div className="relative z-10 xl:max-w-7xl max-w-auto mx-auto text-center lg:px-[60px] px-10">

@@ -1,9 +1,8 @@
-import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail, Phone, MapPin } from 'lucide-react';
+import Link from "next/link";
 
-export function Footer() {
+const Footer = () => {
   return (
     <footer className="text-white xl:mt-[100px] mt-10 mb-4 mx-4 rounded-[20px]" style={{ backgroundColor: '#070707' }}>
       <div className="mx-auto lg:px-20 px-5 py-12">
@@ -11,18 +10,18 @@ export function Footer() {
         <div className="flex justify-between items-center mb-12">
           <div className="flex items-center">
             <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-yellow-500 bg-clip-text text-transparent">
-              <img src="/assets/images/Header-2-Logo.svg" alt="Luxe Excursions" className="w-[60px] h-[52px] rounded-lg object-cover" />
+              <img src="/assets/images/Header-2-Logo.svg" alt="alt" className="w-[60px] h-[52px]" />
             </span>
           </div>
           <div className="flex items-center space-x-4">
             <Link href="#" className="text-white hover:text-amber-600 transition-colors">
-                <img src="assets/images/Facebook 2.svg" alt="fb" />
+              <img src="assets/images/Facebook 2.svg" alt="fb" />
             </Link>
             <Link href="#" className="text-white hover:text-amber-600 transition-colors">
-                <img src="assets/images/instax.svg" alt="fb" />
+              <img src="assets/images/instax.svg" alt="fb" />
             </Link>
             <Link href="#" className="text-white hover:text-amber-600 transition-colors">
-                <img src="assets/images/Twitter 2.svg" alt="fb" />
+              <img src="assets/images/Twitter 2.svg" alt="fb" />
             </Link>
           </div>
         </div>
@@ -30,7 +29,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
           {/* Newsletter - wider column */}
           <div className="md:col-span-5 flex flex-col w-full min-w-0 max-w-[420px]">
-            <h3 className="font-semibold text-2xl mb-4 text-[#FEFEFE] text-left">Join Our Newsletter!</h3>
+            <h3 className="font-poltawski text-2xl font-semibold mb-4 text-[#FEFEFE] text-left">Join Our Newsletter!</h3>
             <Input
               type="email"
               placeholder="Your Email"
@@ -50,49 +49,43 @@ export function Footer() {
 
           {/* Discover */}
           <div className="md:col-span-2 w-full min-w-0">
-            <h3 className="text-xl font-semibold mb-4 text-white text-left">Discover</h3>
+            <h3 className="font-poltawski text-xl font-semibold mb-4 text-white text-left">Discover</h3>
             <ul className="space-y-2">
-              <li><Link href="/" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition">Home</Link></li>
-              <li><Link href="/about" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition">About</Link></li>
-              <li><Link href="/experiences" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition">Experiences</Link></li>
-              <li><Link href="/booking" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition">Booking</Link></li>
-              <li><Link href="/booking-details" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition">Booking Details</Link></li>
-              <li><Link href="/contact" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition">Contact</Link></li>
+              <li><Link href="/" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Home</Link></li>
+              <li><Link href="/about" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">About</Link></li>
+              <li><Link href="/experiences" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Experiences</Link></li>
+              <li><Link href="/booking" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Booking</Link></li>
+              <li><Link href="/booking-details" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Booking Details</Link></li>
+              <li><Link href="/contact" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Contact</Link></li>
             </ul>
           </div>
 
           {/* Support */}
           <div className="md:col-span-2 w-full min-w-0">
-            <h3 className="text-xl font-semibold mb-4 text-white text-left">Support</h3>
+            <h3 className="font-poltawski text-xl font-semibold mb-4 text-white text-left">Support</h3>
             <ul className="space-y-2">
-              <li><Link href="/customer-service" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition">Customer Service</Link></li>
-              <li><Link href="/terms" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition">Terms & Condition</Link></li>
-              <li><Link href="/privacy" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition">Privacy Policy</Link></li>
-              <li><Link href="/refund" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition">Refund Policy</Link></li>
-              <li><Link href="/travel-policy" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition">Travel Policy</Link></li>
+              <li><Link href="/customer-service" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Customer Service</Link></li>
+              <li><Link href="/terms" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Terms &amp; Condition</Link></li>
+              <li><Link href="/privacy" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Privacy Policy</Link></li>
+              <li><Link href="/refund" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Refund Policy</Link></li>
+              <li><Link href="/travel-policy" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Travel Policy</Link></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div className="md:col-span-3 w-full min-w-0">
-            <h3 className="text-xl font-semibold mb-4 text-white text-left">Contact</h3>
+            <h3 className="font-poltawski text-xl font-semibold mb-4 text-white text-left">Contact</h3>
             <ul className="space-y-3 text-lg break-words">
-              <li className="flex items-center text-white/90 text-base font-normal">
-                <span className="inline-block mr-2 text-[#E0C469] flex-shrink-0">
-                  <Phone className="w-4 h-4" />
-                </span>
+              <li className="flex items-center text-white/90 text-base font-normal font-poltawski">
+                <span className="inline-block mr-2 text-[#E0C469] flex-shrink-0"><img src="/assets/images/Phone.svg" alt="phone" /></span>
                 <a href="tel:+34722645670" className="hover:text-[#E0C469] transition">+34 722 645 670</a>
               </li>
-              <li className="flex items-center text-white/90 text-base font-normal">
-                <span className="inline-block mr-2 text-[#E0C469] flex-shrink-0">
-                  <Mail className="w-4 h-4" />
-                </span>
+              <li className="flex items-center text-white/90 text-base font-normal font-poltawski">
+                <span className="inline-block mr-2 text-[#E0C469] flex-shrink-0"><img src="/assets/images/Mail.svg" alt="mail" /></span>
                 <a href="mailto:info@luxeexcursionstenerife.com" className="hover:text-[#E0C469] transition">info@luxeexcursionstenerife.com</a>
               </li>
-              <li className="flex items-center text-white/90 text-base font-normal">
-                <span className="inline-block mr-2 text-[#E0C469] flex-shrink-0">
-                  <MapPin className="w-4 h-4" />
-                </span>
+              <li className="flex items-center text-white/90 text-base font-normal font-poltawski">
+                <span className="inline-block mr-2 text-[#E0C469] flex-shrink-0"><img src="/assets/images/Location-Filled.svg" alt="location" /></span>
                 <a href="https://maps.app.goo.gl/LGDs3Sck8Mv9CtAKA" target="_blank" rel="noopener noreferrer" className="hover:text-[#E0C469] transition">8460 Rockville Ave. Greenville, NC 27834</a>
               </li>
             </ul>
@@ -105,4 +98,6 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

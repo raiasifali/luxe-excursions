@@ -1,3 +1,4 @@
+'use client'
 import AboutHero from "@/components/about/AboutHero";
 import CraftingJourneys from "@/components/about/CraftingJourneys";
 import CoreValues from "@/components/about/CoreValues";

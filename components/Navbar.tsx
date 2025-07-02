@@ -1,5 +1,7 @@
+'use client'
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,7 +18,7 @@ interface NavbarProps {
 const Navbar = ({ theme = 'dark' }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState({ flag: "🇮🇩", code: "IDN", name: "Indonesian" });
-  const location = useLocation();
+  const pathname = usePathname();
 
   const languages = [
     { flag: "🇮🇩", code: "IDN", name: "Indonesian" },
@@ -37,23 +39,23 @@ const Navbar = ({ theme = 'dark' }: NavbarProps) => {
     { name: "Private Tours", path: "/private-tours" },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   const handleLanguageSelect = (language: typeof selectedLanguage) => {
     setSelectedLanguage(language);
   };
 
   // Color logic based on theme prop
-  const textColor = theme === 'light' ? "text-[#252525]" : "text-white";
+  const textColor = theme === 'light' ? "text-gray-900" : "text-white";
   const hoverColor = theme === 'light' ? "hover:text-amber-600" : "hover:text-amber-300";
   const activeColor = theme === 'light' ? "text-amber-600" : "text-[#E0C469]";
 
   return (
-    <nav className="bg-transparent backdrop-blur-md border-white/20 fixed top-0 w-full z-50">
+    <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 fixed top-0 w-full z-50">
       <div className="mx-auto px-20">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-yellow-500 bg-clip-text text-transparent">
               <img src="/assets/images/Header-2-Logo.svg" alt="alt" />
             </span>
@@ -64,7 +66,7 @@ const Navbar = ({ theme = 'dark' }: NavbarProps) => {
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                to={item.path}
+                href={item.path}
                 className={`font-medium transition-colors ${hoverColor} ${
                   isActive(item.path) ? activeColor : textColor
                 }`}
@@ -104,7 +106,7 @@ const Navbar = ({ theme = 'dark' }: NavbarProps) => {
             </DropdownMenu>
             
             <Button className="bg-[#E0C469] hover:from-amber-300 text-white">
-              <Link to="register">Register</Link>
+              <Link href="/register">Register</Link>
             </Button>
           </div>
 
@@ -128,9 +130,9 @@ const Navbar = ({ theme = 'dark' }: NavbarProps) => {
               {navItems.map((item) => (
                 <Link
                   key={item.name}
-                  to={item.path}
+                  href={item.path}
                   className={`block px-3 py-2 text-base font-medium transition-colors hover:text-amber-600 ${
-                    isActive(item.path) ? "text-amber-600" : "text-white"
+                    isActive(item.path) ? "text-amber-600" : textColor
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -142,7 +144,7 @@ const Navbar = ({ theme = 'dark' }: NavbarProps) => {
                   <DropdownMenuTrigger asChild>
                     <Button
                       variant="ghost"
-                      className="flex items-center space-x-1 text-white hover:text-amber-600 transition-colors p-0"
+                      className={`flex items-center space-x-1 ${textColor} hover:text-amber-600 transition-colors p-0`}
                     >
                       <span className="text-sm font-medium">
                         {selectedLanguage.flag} {selectedLanguage.code}
@@ -166,7 +168,7 @@ const Navbar = ({ theme = 'dark' }: NavbarProps) => {
                 </DropdownMenu>
                 
                 <Button className="bg-[#E0C469] hover:from-amber-300 text-white ml-4">
-                  <Link to="register">Register</Link>
+                  <Link href="/register">Register</Link>
                 </Button>
               </div>
             </div>

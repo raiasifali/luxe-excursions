@@ -43,7 +43,7 @@ const Login = () => {
           </h1>
         </div>
       </div>
-      <div className="flex flex-col xl:flex-row lg:min-h-screen h-auto bg-[#101010] overflow-hidden gap-0">
+      <div className="flex flex-col xl:flex-row lg:min-h-screen xl:w-full flex-wrap h-auto bg-[#101010] overflow-hidden gap-0">
         {/* Left Side - Stacked Images */}
         <div className="hidden lg:flex xl:w-1/2 flex-col justify-end items-center p-4 h-[992px] bg-transparent rounded-[24px]">
           {/* Top Image - Taller */}
@@ -76,7 +76,7 @@ const Login = () => {
         </div>
 
         {/* Right Side - Login Form */}
-        <div className="w-full xl:w-[696px] my-4 flex flex-col justify-center items-start px-4 sm:px-8 lg:px-[80px] py-8 lg:py-0 gap-10 bg-white rounded-none lg:rounded-[24px] mx-0">
+        <div className="w-full xl:w-[696px] xl:my-4 flex flex-col justify-center items-start px-4 sm:px-8 lg:px-[80px] py-8 lg:py-0 gap-10 bg-white rounded-[24px] mx-0">
           <div className="w-full max-w-[536px] flex flex-col gap-10 mx-auto">
             {/* Detail Section */}
             <div className="flex flex-col items-start gap-4 w-full">

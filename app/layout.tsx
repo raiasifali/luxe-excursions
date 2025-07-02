@@ -1,8 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Anton, Playfair_Display, Public_Sans } from 'next/font/google';
-import { Navigation } from '@/components/navigation';
-import { Footer } from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const anton = Anton({ subsets: ['latin'], weight: '400', variable: '--font-anton' });
@@ -26,11 +25,9 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poltawski+Nowy:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <Navigation theme="light" />
         <main className="min-h-screen">
           {children}
         </main>
-        <Footer />
       </body>
     </html>
   );

@@ -127,7 +127,7 @@ const Navbar = ({ theme = 'dark', backgroundColor }: NavbarProps) => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-black/80 backdrop-blur-md border-t border-white/20 rounded-b-lg">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-black/80 backdrop-blur-md border-t border-white/20 rounded-b-lg relative">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -153,7 +153,7 @@ const Navbar = ({ theme = 'dark', backgroundColor }: NavbarProps) => {
                       <ChevronDown className="h-4 w-4" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg rounded-lg z-[60]">
+                  <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg rounded-lg z-[200]">
                     {languages.map((language) => (
                       <DropdownMenuItem
                         key={language.code}

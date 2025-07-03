@@ -23,6 +23,9 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${anton.variable} ${playfair.variable} ${publicsans.variable}`}>
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Poltawski+Nowy:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="icon" href="/assets/images/Header-2-Logo.svg" type="image/svg+xml" />
+        <meta property="og:image" content="/assets/images/Logo-big.svg" />
+        <meta name="twitter:image" content="/assets/images/Logo-big.svg" />
       </head>
       <body>
         <main className="min-h-screen">

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from '../ui/button';
-import { Calendar } from 'lucide-react';
 
 const itinerary = [
   {
@@ -63,9 +62,9 @@ const YourItinerary = () => {
           <div className="flex flex-col gap-[20px] w-full">
             <span className="flex flex-row items-center px-[20px] py-[8px] gap-[8px] w-[242px] h-[40px] bg-[#F5F5F5] rounded-[12px] text-sm font-poltawski font-medium text-[#252525] mb-0">
               <img src="/assets/images/Calender-grey.svg" alt="" />
-              {itinerary[0].date}
+              {itinerary[0]?.date ?? ""}
             </span>
-            {itinerary[0].details.map((section, idx) => (
+            {itinerary[0]?.details?.map((section, idx) => (
               <div key={section.heading} className="flex flex-col justify-center items-center gap-[12px] xl:w-[448px] w-full">
                 <h3 className="text-lg font-anton leading-tight tracking-normal text-[#252525] uppercase w-full font-normal">
                   {section.heading}

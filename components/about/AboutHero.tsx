@@ -2,7 +2,7 @@
 const AboutHero = () => {
   return (
     <section className="relative min-h-screen bg-black pt-16 pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
         <div className="text-center mb-12">
           <h1 className="font-anton text-4xl md:text-6xl lg:text-[64px] font-normal mb-6 text-white uppercase tracking-wider">
             About Luxe - Excursions Tenerife

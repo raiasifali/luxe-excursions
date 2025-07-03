@@ -3,7 +3,7 @@ import { Star, MapPin, Clock } from 'lucide-react';
 
 const PrivateToursHero = () => {
   return (
-    <section className="w-full px-4 md:px-20 my-20 pt-16">
+    <section className="w-full px-4 md:px-20 my-20">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">

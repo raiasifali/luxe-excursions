@@ -42,7 +42,7 @@ const TestimonialSlider = () => {
       }}
     >
       <div className="absolute inset-0 bg-black/80"></div>
-      <div className="mx-auto relative z-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-20 w-full max-w-7xl">
+      <div className="mx-auto relative z-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-16 md:px-5 px-10 w-full max-w-7xl">
         {/* Left: Image and Name/Role */}
         <div className="flex flex-col items-center lg:items-start w-full lg:w-[350px] max-w-full h-auto lg:h-[440px] justify-between">
           <div className="w-full max-w-[320px] h-[320px] md:h-[400px] rounded-xl border-4 border-white overflow-hidden shadow-lg xl:skew-x-[5deg]">

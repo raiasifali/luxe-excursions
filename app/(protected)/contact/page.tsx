@@ -36,7 +36,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="w-full px-4 md:px-20 mt-20 pt-16">
+      <section className="w-full px-4 md:px-20 mt-20">
         <div
           className="relative h-[532px] rounded-[20px] bg-cover bg-center overflow-hidden"
           style={{

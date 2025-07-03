@@ -14,10 +14,11 @@ export default function HomePage() {
         {/* Hero Content */}
         <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center mx-auto px-20">
-            <h1 className="font-anton text-4xl md:text-6xl lg:text-[64px] font-normal mb-6 text-white !leading-[120%] animate-fade-in">
+            {/* <h1 className="font-anton text-4xl md:text-6xl lg:text-[64px] font-normal mb-6 text-white !leading-[120%] animate-fade-in">
               EXPLORE THE WORLD'S MOST BREATHTAKING AND<br />
               UNFORGETTABLE TRAVEL DESTINATIONS
-            </h1>
+            </h1> */}
+            <img src="/assets/images/Logo-big.svg" alt="logo-big" className='w-[240px] h-[206px]' />
           </div>
         </div>
       </section>

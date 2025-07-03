@@ -94,7 +94,7 @@ const PricePill = ({ price }: { price: number }) => (
   <div className="absolute top-4 left-4 z-10">
     <div className="flex flex-row items-center bg-[#0A1805] rounded-[12px] px-[16px] h-[56px] gap-[8px] backdrop-blur-[9px]">
       <span className="text-white text-lg">$</span>
-      <span className="font-bold font-normal text-white text-[18px] uppercase">${price}/PERSON</span>
+      <span className="font-anton font-normal text-white text-[18px] uppercase">${price}/PERSON</span>
     </div>
   </div>
 );
@@ -106,8 +106,8 @@ const Card = ({ exp, tall = false, stackedMobile = false }: { exp: typeof experi
       <PricePill price={exp.price} />
     </div>
     <div className="flex flex-col items-start gap-[8px] w-full h-auto p-0">
-      <h3 className="font-bold text-[16px] sm:text-[18px] md:text-[20px] xl:text-[24px] leading-[120%] text-[#101010] uppercase font-normal w-full p-0 m-0">{exp.title}</h3>
-      <p className="text-[12px] sm:text-[14px] md:text-[15px] xl:text-[16px] font-medium leading-[150%] text-[#101010] w-full p-0 m-0 line-clamp-2">{exp.description}</p>
+      <h3 className="text-[16px] sm:text-[18px] md:text-[20px] xl:text-[24px] leading-[120%] font-anton text-[#101010] uppercase font-normal w-full p-0 m-0">{exp.title}</h3>
+      <p className="text-[12px] sm:text-[14px] md:text-[15px] xl:text-[16px] font-medium font-inter leading-[150%] text-[#101010] w-full p-0 m-0 line-clamp-2">{exp.description}</p>
     </div>
   </div>
 );

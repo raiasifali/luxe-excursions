@@ -13,9 +13,10 @@ import {
 
 interface NavbarProps {
   theme?: 'light' | 'dark';
+  backgroundColor: 'dark' | '';
 }
 
-const Navbar = ({ theme = 'dark' }: NavbarProps) => {
+const Navbar = ({ theme = 'dark', backgroundColor }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState({ flag: "🇮🇩", code: "IDN", name: "Indonesian" });
   const pathname = usePathname();
@@ -51,7 +52,7 @@ const Navbar = ({ theme = 'dark' }: NavbarProps) => {
   const activeColor = theme === 'light' ? "text-amber-600" : "text-[#E0C469]";
 
   return (
-    <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 fixed top-0 w-full z-50">
+    <nav className={`fixed backdrop-blur-md top-0 left-0 w-full z-[100] ${theme === 'dark' ? 'text-white' : 'text-black'} ${backgroundColor === 'dark' ? 'bg-black': 'bg-white/10' }`}>
       <div className="mx-auto px-20">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -131,7 +132,7 @@ const Navbar = ({ theme = 'dark' }: NavbarProps) => {
                 <Link
                   key={item.name}
                   href={item.path}
-                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-amber-600 ${
+                  className={`block px-3 py-2 text-white text-base font-medium transition-colors hover:text-amber-600 ${
                     isActive(item.path) ? "text-amber-600" : textColor
                   }`}
                   onClick={() => setIsOpen(false)}

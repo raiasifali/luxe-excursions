@@ -39,8 +39,8 @@ const YourItinerary = () => {
               key={step.title}
               className={
                 idx === 0
-                  ? 'flex flex-row justify-center items-center xl:w-[429px] h-[69px] w-full px-[20px] gap-[12px] bg-[#E0C469] hover:bg-[#d1b15a] rounded-[8px] text-left text-[24px] leading-[120%] text-[#2C2C2C] font-bold uppercase transition-colors'
-                  : 'flex flex-row justify-center items-center xl:w-[429px] h-[69px] w-full px-[20px] gap-[12px] bg-white border border-[#8D8D8D] hover:bg-gray-50 rounded-[8px] text-left text-[24px] leading-[120%] text-[#252525] font-normal transition-colors'
+                  ? 'flex flex-row justify-center items-center xl:w-[429px] h-[69px] w-full px-[20px] gap-[12px] bg-[#E0C469] hover:bg-[#d1b15a] rounded-[8px] font-anton text-left text-2xl leading-[120%] text-[#2C2C2C] font-normal uppercase transition-colors'
+                  : 'flex flex-row justify-center items-center xl:w-[429px] h-[69px] w-full px-[20px] gap-[12px] bg-white border border-[#8D8D8D] hover:bg-gray-50 rounded-[8px] font-poltawski text-left text-[24px] leading-[120%] text-[#252525] font-normal transition-colors'
               }
             >
               <span className={idx === 0 ? 'font-bold flex-grow text-left' : 'font-normal flex-grow text-left'}>
@@ -61,22 +61,22 @@ const YourItinerary = () => {
         {/* Details */}
         <div className="flex flex-col items-start xl:w-[448px] w-full h-auto xl:h-[514px] gap-[77px]">
           <div className="flex flex-col gap-[20px] w-full">
-            <span className="flex flex-row items-center px-[20px] py-[8px] gap-[8px] w-[242px] h-[40px] bg-[#F5F5F5] rounded-[12px] text-[14px] font-medium text-[#252525] mb-0">
+            <span className="flex flex-row items-center px-[20px] py-[8px] gap-[8px] w-[242px] h-[40px] bg-[#F5F5F5] rounded-[12px] text-sm font-poltawski font-medium text-[#252525] mb-0">
               <img src="/assets/images/Calender-grey.svg" alt="" />
               {itinerary[0].date}
             </span>
             {itinerary[0].details.map((section, idx) => (
               <div key={section.heading} className="flex flex-col justify-center items-center gap-[12px] xl:w-[448px] w-full">
-                <h3 className="text-[18px] leading-[120%] text-[#252525] uppercase w-full font-bold">
+                <h3 className="text-lg font-anton leading-tight tracking-normal text-[#252525] uppercase w-full font-normal">
                   {section.heading}
                 </h3>
-                <p className="text-[16px] leading-[120%] text-[#5A5A5A] w-full">
+                <p className="text-base leading-[120%] font-poltawski tracking-normal text-[#5A5A5A] w-full">
                   {section.text}
                 </p>
               </div>
             ))}
           </div>
-          <Button className="flex flex-row justify-center items-center gap-[12px] w-[204px] h-[64px] px-[40px] py-[20px] bg-[#E0C469] hover:bg-[#E0C469]/90 rounded-[8px] font-bold text-[18px] leading-[120%] text-[#2C2C2C] mt-0">
+          <Button className="flex flex-row justify-center items-center gap-[12px] font-inter w-[204px] h-[64px] px-[40px] py-[20px] bg-[#E0C469] hover:bg-[#E0C469]/90 rounded-[8px] font-bold text-[18px] leading-[120%] text-[#2C2C2C] mt-0">
             Book Now
             <img src="/assets/images/Arrow-up.svg" alt="Arrow-up" />
           </Button>

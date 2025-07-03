@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -14,13 +15,13 @@ const Footer = () => {
             </span>
           </div>
           <div className="flex items-center space-x-4">
-            <Link to="#" className="text-white hover:text-amber-600 transition-colors">
+            <Link href="#" className="text-white hover:text-amber-600 transition-colors">
               <img src="assets/images/Facebook 2.svg" alt="fb" />
             </Link>
-            <Link to="#" className="text-white hover:text-amber-600 transition-colors">
+            <Link href="#" className="text-white hover:text-amber-600 transition-colors">
               <img src="assets/images/instax.svg" alt="fb" />
             </Link>
-            <Link to="#" className="text-white hover:text-amber-600 transition-colors">
+            <Link href="#" className="text-white hover:text-amber-600 transition-colors">
               <img src="assets/images/Twitter 2.svg" alt="fb" />
             </Link>
           </div>
@@ -51,12 +52,12 @@ const Footer = () => {
           <div className="md:col-span-2 w-full min-w-0">
             <h3 className="font-poltawski text-xl font-semibold mb-4 text-white text-left">Discover</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Home</Link></li>
-              <li><Link to="/about" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">About</Link></li>
-              <li><Link to="/experiences" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Experiences</Link></li>
-              <li><Link to="/booking" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Booking</Link></li>
-              <li><Link to="/booking-details" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Booking Details</Link></li>
-              <li><Link to="/contact" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Contact</Link></li>
+              <li><Link href="/" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Home</Link></li>
+              <li><Link href="/about" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">About</Link></li>
+              <li><Link href="/experiences" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Experiences</Link></li>
+              <li><Link href="/booking" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Booking</Link></li>
+              <li><Link href="/booking-details" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Booking Details</Link></li>
+              <li><Link href="/contact" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Contact</Link></li>
             </ul>
           </div>
 
@@ -64,11 +65,11 @@ const Footer = () => {
           <div className="md:col-span-2 w-full min-w-0">
             <h3 className="font-poltawski text-xl font-semibold mb-4 text-white text-left">Support</h3>
             <ul className="space-y-2">
-              <li><Link to="/customer-service" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Customer Service</Link></li>
-              <li><Link to="/terms" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Terms &amp; Condition</Link></li>
-              <li><Link to="/privacy" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Privacy Policy</Link></li>
-              <li><Link to="/refund" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Refund Policy</Link></li>
-              <li><Link to="/travel-policy" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Travel Policy</Link></li>
+              <li><Link href="/customer-service" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Customer Service</Link></li>
+              <li><Link href="/terms" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Terms &amp; Condition</Link></li>
+              <li><Link href="/privacy" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Privacy Policy</Link></li>
+              <li><Link href="/refund" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Refund Policy</Link></li>
+              <li><Link href="/travel-policy" className="text-base font-normal text-white/90 hover:text-[#E0C469] transition font-poltawski">Travel Policy</Link></li>
             </ul>
           </div>
 

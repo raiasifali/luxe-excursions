@@ -1,7 +1,7 @@
 'use client'
-// app/(protected)/layout.tsx
+import Footer from "@/components/Footer";
 
-import Footer from "@/components/footer";
+
 import Navbar from "@/components/Navbar";
 import { usePathname } from 'next/navigation';
 

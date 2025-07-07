@@ -2,14 +2,11 @@ import BookingTourCard from "./BookingTourCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import { BookingFormRightCardsProps } from "@/types/booking";
 import React from "react";
 
-type BookingFormRightCardsProps = {
-  promoCode: string;
-  setPromoCode: (v: string) => void;
-};
 
-const BookingFormRightCards: React.FC<BookingFormRightCardsProps> = ({ promoCode, setPromoCode }) => (
+const BookingFormRightCards: React.FC<BookingFormRightCardsProps> = ({ register, setValue, errors, promoCode, isValid, isSubmitting, submitError }) => (
   <div className="w-full lg:w-[519px] flex flex-col gap-6">
     {/* Top Card: Private Tours */}
     <BookingTourCard
@@ -36,12 +33,14 @@ const BookingFormRightCards: React.FC<BookingFormRightCardsProps> = ({ promoCode
             />
             <Input
               placeholder="Promo Code"
-              value={promoCode}
-              onChange={(e) => setPromoCode(e.target.value)}
-              className="h-14 rounded-md border border-[#101010] pl-12 pr-4 bg-white text-left text-base font-inter font-medium text-[#101010] shadow-none focus-visible:!outline-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+              className={`h-14 rounded-md border pl-12 pr-4 bg-white text-left text-base font-inter font-medium text-[#101010] shadow-none focus-visible:!outline-0 focus-visible:ring-0 focus-visible:ring-offset-0
+              }`}
             />
           </div>
-          <Button className="bg-[#E0C469] text-[#101010] hover:bg-[#E0C469]/90 px-6 h-14 rounded-md font-inter font-medium text-base">
+          <Button 
+            type="button"
+            className="bg-[#E0C469] text-[#101010] hover:bg-[#E0C469]/90 px-6 h-14 rounded-md font-inter font-medium text-base"
+          >
             Claim
           </Button>
         </div>
@@ -63,7 +62,7 @@ const BookingFormRightCards: React.FC<BookingFormRightCardsProps> = ({ promoCode
             <span className="font-semibold">$ 24.00</span>
           </div>
           <p className="text-base font-inter text-[#878787]">
-            You're getting a reduced rate because you're a Genius Member
+            You&apos;re getting a reduced rate because you&apos;re a Genius Member
           </p>
           <div className="flex justify-between text-base font-inter text-[#101010]">
             <span>Includes taxes and fees</span>
@@ -92,8 +91,21 @@ const BookingFormRightCards: React.FC<BookingFormRightCardsProps> = ({ promoCode
             <a href="#" className="underline text-[#101010] ml-1">Cancellation Policy</a>, the
             <a href="#" className="underline text-[#101010] ml-1">Guest Refund Policy</a>.
           </p>
-          <Button className="w-full bg-[#E0C469] text-[#2C2C2C] hover:bg-[#E0C469]/90 py-4 text-lg font-medium font-inter rounded-md">
-            Confirm and Pay
+          {submitError && (
+            <div className="bg-red-50 border border-red-200 rounded-md p-3 mb-4">
+              <p className="text-red-600 text-sm">{submitError}</p>
+            </div>
+          )}
+          <Button 
+            type="submit"
+            disabled={!isValid || isSubmitting}
+            className={`w-full py-4 text-lg font-medium font-inter rounded-md ${
+              isValid && !isSubmitting
+                ? 'bg-[#E0C469] text-[#2C2C2C] hover:bg-[#E0C469]/90' 
+                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+            }`}
+          >
+            {isSubmitting ? 'Creating Booking...' : 'Confirm and Pay'}
           </Button>
         </div>
       </div>

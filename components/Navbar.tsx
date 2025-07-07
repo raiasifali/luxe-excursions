@@ -145,7 +145,7 @@ const Navbar = ({ theme = 'dark', backgroundColor }: NavbarProps) => {
                   <DropdownMenuTrigger asChild>
                     <Button
                       variant="ghost"
-                      className={`flex items-center space-x-1 ${textColor} hover:text-amber-600 transition-colors p-0`}
+                      className={`flex items-center text-white space-x-1 hover:text-amber-600 transition-colors p-0`}
                     >
                       <span className="text-sm font-medium">
                         {selectedLanguage.flag} {selectedLanguage.code}

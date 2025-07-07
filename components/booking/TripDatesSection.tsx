@@ -1,20 +1,14 @@
-
-import { Button } from "@/components/ui/button";
+import { TripDatesSectionProps } from "@/types/booking";
 import React from "react";
 
-type TripDatesSectionProps = {
-  selectedDate: number;
-  setSelectedDate: (n: number) => void;
-  showMoreDates: boolean;
-  setShowMoreDates: (v: boolean) => void;
-  visibleDates: { departure: string; arrival: string }[];
-};
+
+
 
 const TripDatesSection: React.FC<TripDatesSectionProps> = ({
+  register,
+  setValue,
+  errors,
   selectedDate,
-  setSelectedDate,
-  showMoreDates,
-  setShowMoreDates,
   visibleDates,
 }) => (
   <div>
@@ -24,15 +18,18 @@ const TripDatesSection: React.FC<TripDatesSectionProps> = ({
         <div key={index} className={`flex items-center justify-between p-4 border rounded-lg cursor-pointer transition-colors ${
           selectedDate === index ? 'border-black bg-[#F3FFEF]' : 'border-gray-200 hover:bg-[#F3FFEF]'
         }`}
-          onClick={() => setSelectedDate(index)}
+          onClick={() => setValue("selectedDate", index)}
         >
           <div className="flex items-center space-x-4 relative">
             <input
               type="radio"
-              name="tripDate"
-              value={date.departure}
+              {...register("selectedDate", { 
+                required: "Please select a trip date",
+                min: { value: 0, message: "Please select a valid date" }
+              })}
+              value={index}
               checked={selectedDate === index}
-              onChange={() => setSelectedDate(index)}
+              onChange={() => setValue("selectedDate", index)}
               className="sr-only"
               id={`tripDate-${index}`}
             />
@@ -57,9 +54,9 @@ const TripDatesSection: React.FC<TripDatesSectionProps> = ({
           </div>
         </div>
       ))}
-      <Button variant="outline" className="w-full py-6 mt-4 border-[#0A1805] font-semibold text-[#0A1805] text-base font-inter leading-normal tracking-normal" onClick={() => setShowMoreDates(!showMoreDates)}>
-        {showMoreDates ? 'Show Less Dates' : 'Show More Dates'}
-      </Button>
+      {errors.selectedDate && (
+        <p className="text-red-500 text-sm mt-2">{errors.selectedDate.message}</p>
+      )}
     </div>
   </div>
 );

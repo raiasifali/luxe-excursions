@@ -10,6 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import routes from "@/lib/routes";
 
 interface NavbarProps {
   theme?: 'light' | 'dark';
@@ -169,7 +170,7 @@ const Navbar = ({ theme = 'dark', backgroundColor }: NavbarProps) => {
                 </DropdownMenu>
                 
                 <Button className="bg-[#E0C469] hover:from-amber-300 text-white ml-4">
-                  <Link href="/register">Register</Link>
+                  <Link href={routes.ui.register}>Register</Link>
                 </Button>
               </div>
             </div>

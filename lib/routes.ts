@@ -1,15 +1,18 @@
 // Centralized API endpoint definitions for maintainability
 
 export const routes = {
-  api: {
-    bookings: '/bookings',
-    bookingById: (bookingId: string) => `/bookings/${bookingId}`,
-    excursions: '/excursions',
-    excursionDetails: (excursionId: string) => `/excursions/${excursionId}`,
-    searchExcursions: '/excursions/search',
-    availableDates: (excursionId: string) => `/excursions/${excursionId}/available-dates`,
-    validatePromoCode: '/promo-codes/validate',
+  auth: {
+    bookintKitToken: 'https://api.bookingkit.de/oauth/token',
   },
+  api: {
+    experiences: '/events',
+  },
+  ui: {
+    register: '/register'
+  },
+  serverRoutes: {
+    tokenApiRoute: '/api/bookingkit-token'
+  }
 };
 
 export default routes; 

@@ -1,23 +1,22 @@
 import axios, { AxiosInstance, InternalAxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
+import { getAccessToken } from './auth';
 
 
 const apiClient: AxiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || 'https://api.bookingkit.de/v1',
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL || 'https://api.bookingkit.de/v3',
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 10000, // 10 second timeout
+  timeout: 10000,
 });
 
 
 apiClient.interceptors.request.use(
-  (config: InternalAxiosRequestConfig) => {
-    const apiKey = process.env.BOOKINGKIT_API_KEY;
-    
-    if (apiKey && config.headers) {
-      config.headers.Authorization = `Bearer ${apiKey}`;
-    }
-    
+  async (config: InternalAxiosRequestConfig) => {
+      const token = await getAccessToken();
+      if (token && config.headers) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
     return config;
   },
   (error: AxiosError) => {
@@ -33,13 +32,12 @@ apiClient.interceptors.response.use(
   (error: AxiosError) => {
     // Handle common errors
     if (error.response?.status === 401) {
-      console.error('Unauthorized: Please check your API key');
+      console.error('Unauthorized: Please check your API key or client credentials');
     } else if (error.response?.status === 429) {
       console.error('Rate limit exceeded');
     } else if (error.response?.status && error.response.status >= 500) {
       console.error('Server error occurred');
     }
-    
     return Promise.reject(error);
   }
 );

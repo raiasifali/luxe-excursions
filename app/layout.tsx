@@ -1,7 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Anton, Playfair_Display, Public_Sans } from 'next/font/google';
-import Navbar from '@/components/Navbar';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const anton = Anton({ subsets: ['latin'], weight: '400', variable: '--font-anton' });

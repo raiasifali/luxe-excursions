@@ -75,9 +75,8 @@ const BookingForm = () => {
       };
 
       // Call the API to create booking
-      const response = await bookingApi.createBooking(bookingData);
+      // const response = await bookingApi.createBooking(bookingData);
       
-      console.log("Booking created successfully:", response);
       
       // Handle success - you might want to redirect or show success message
       // For example, redirect to booking details page

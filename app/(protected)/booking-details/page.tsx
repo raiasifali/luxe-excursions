@@ -6,7 +6,7 @@ import ExcursionBanner from "@/components/home/ExcursionBanner";
 const BookingDetails = () => {
   return (
     <div className="min-h-screen bg-white">
-      <BookingHero title="Booking Detail" backLink="/" />
+      <BookingHero title="Booking Detail" />
       <BookingDetailsContent />
       <ExcursionBanner />
     </div>

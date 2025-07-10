@@ -1,6 +1,8 @@
 'use client'
 import { useEffect, useState } from 'react';
 import { getAllExperiences } from '@/lib/booking-api';
+import Link from 'next/link';
+import routes from '@/lib/routes';
 
 interface Event {
   id: string;
@@ -83,9 +85,11 @@ const Experiences = () => {
                       </span>
                     );
                   })()}
+                  <Link href={`${routes.ui.experiences}/${event.id}`}>
                   <button className="bg-[#E0C469] hover:bg-[#d1b15a] text-black px-4 py-2 rounded-lg font-medium transition">
-                    Book Now
+                    Detail
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>

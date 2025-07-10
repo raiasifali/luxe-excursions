@@ -7,12 +7,14 @@ import { usePathname } from 'next/navigation';
 
 export default function ProtectedLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const isExperienceDetail = pathname?.startsWith('/experiences/') && pathname?.split('/').length === 3;
   const navbarTheme =
     pathname === '/contact' ||
     pathname === '/excursions' ||
     pathname === '/private-tours' ||
     pathname === '/booking' ||
     pathname === '/booking-details' ||
+    isExperienceDetail ||
     pathname === '/experiences' ||
     pathname === '/events' ||
     pathname === '/activities' ||

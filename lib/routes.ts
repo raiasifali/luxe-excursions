@@ -8,7 +8,9 @@ export const routes = {
     experiences: '/events',
   },
   ui: {
-    register: '/register'
+    register: '/register',
+    experiences: 'experiences',
+    booking: '/booking'
   },
   serverRoutes: {
     tokenApiRoute: '/api/bookingkit-token'

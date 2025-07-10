@@ -11,7 +11,17 @@ export const bookingApi = {
       console.error('Error fetching experiences:', error);
       throw error;
     }
+  },
+  getExperienceById: async (id: string): Promise<any> => {
+    try {
+      const response = await apiClient.get(`${routes.api.experiences}/${id}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching experience:', error);
+      throw error;
+    }
   }
 };
 
 export const getAllExperiences = bookingApi.getAllExperiences;
+export const getExperienceById = bookingApi.getExperienceById;

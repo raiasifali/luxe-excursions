@@ -30,6 +30,10 @@ export default function RootLayout({
         <main className="min-h-screen">
           {children}
         </main>
+        {/* Global Toaster */}
+        <div id="toaster-root">
+          {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        </div>
       </body>
     </html>
   );

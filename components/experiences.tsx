@@ -1,19 +1,20 @@
 'use client'
 import { useEffect, useState } from 'react';
-import { getAllExperiences } from '@/lib/booking-api';
 import Link from 'next/link';
 import routes from '@/lib/routes';
-import { getAccessToken } from '@/lib/auth';
+import { staticExperiences } from '@/components/experiences/static-experiences';
 
-interface Event {
+interface EventLike {
   id: string;
-  name: string;
-  image?: string;
-  [key: string]: any;
+  title: string;
+  description: string;
+  images: string[];
+  url?: string;
+  prices?: { value: string; currency: string }[];
 }
 
 const Experiences = () => {
-  const [events, setEvents] = useState<Event[]>([]);
+  const [events, setEvents] = useState<EventLike[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -22,19 +23,18 @@ const Experiences = () => {
   }, []);
 
   const fetchEvents = async () => {
-      setLoading(true);
-      setError(null);
-      try {
-        // Ensure token is ready before making the API call
-        await getAccessToken();
-        const data = await getAllExperiences();
-        setEvents(data);
-      } catch (err: any) {
-        setError('Failed to load events.');
-      } finally {
-        setLoading(false);
-      }
-    };
+    setLoading(true);
+    setError(null);
+    try {
+      // Use local static dataset instead of API
+      const allowed = new Set(['diamond-experience', 'gold-experience', 'silver-experience']);
+      setEvents(staticExperiences.filter((e) => allowed.has(e.id)) as any);
+    } catch (err: any) {
+      setError('Failed to load experiences.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (loading) {
     return (
@@ -66,36 +66,28 @@ const Experiences = () => {
         {events.map((event, idx) => (
           <div key={event.id || idx} className="bg-white rounded-[20px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
             <img
-              src={event.images[0] || `https://images.pexels.com/photos/159711${(idx % 6) + 1}/pexels-photo-159711${(idx % 6) + 1}.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop`}
-              alt={event.name || `Experience ${idx + 1}`}
+              src={event.images?.[0] || `https://images.pexels.com/photos/159711${(idx % 6) + 1}/pexels-photo-159711${(idx % 6) + 1}.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop`}
+              alt={event.title || `Experience ${idx + 1}`}
               className="w-full h-[250px] object-cover"
             />
             <div className="p-6">
               <h3 className="text-xl font-bold text-[#252525] mb-2">{event.title}</h3>
-              <p className="text-gray-600 mb-4 line-clamp-3" dangerouslySetInnerHTML={{__html: event.description}}></p>
+              <p className="text-gray-600 mb-4 line-clamp-3">{event.description}</p>
               <div className="flex items-center justify-between">
-                {(() => {
-                  let minPrice: number | null = null;
-                  let currency = 'EUR';
-                  if (Array.isArray(event.prices) && event.prices.length > 0) {
-                    minPrice = Math.min(
-                      ...event.prices.map((p: any) => parseFloat(p.value))
-                    );
-                    currency = event.prices[0].currency || 'EUR';
-                  }
-                  return (
-                    <span className="text-[#E0C469] font-bold text-lg">
-                      {minPrice !== null
-                        ? `From ${currency} ${minPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-                        : 'Price on request'}
-                    </span>
-                  );
-                })()}
-                <Link href={`${routes.ui.experiences}/${event.id}`}>
-                <button className="bg-[#E0C469] hover:bg-[#d1b15a] text-black px-4 py-2 rounded-lg font-medium transition">
-                  Detail
-                </button>
-                </Link>
+                <span className="text-[#E0C469] font-bold text-lg">
+                  {Array.isArray(event.prices) && event.prices?.length
+                    ? `From ${event.prices[0].currency} ${Math.min(...event.prices.map((p) => parseFloat(p.value))).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+                    : 'Price varies'}
+                </span>
+                {event.url ? (
+                  <a href={event.url} target="_blank" className="bg-[#E0C469] hover:bg-[#d1b15a] text-black px-4 py-2 rounded-lg font-medium transition">Official</a>
+                ) : (
+                  <Link href={`${routes.ui.experiences}/${event.id}`}>
+                    <button className="bg-[#E0C469] hover:bg-[#d1b15a] text-black px-4 py-2 rounded-lg font-medium transition">
+                      Detail
+                    </button>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

@@ -1,7 +1,10 @@
 "use client";
 import Experiences from '@/components/experiences';
-import BookingkitWidget from '@/components/booking/BookingkitWidget';
 
 export default function ExperiencesPage() {
-  return <BookingkitWidget/>;
+  return (
+    <div className="space-y-10">
+      <Experiences />
+    </div>
+  );
 }

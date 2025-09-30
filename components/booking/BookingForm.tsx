@@ -96,6 +96,16 @@ const BookingForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 py-8">
       <div className="flex flex-col lg:flex-row gap-y-8 lg:gap-x-[24px] justify-center items-start">
+        <BookingFormRightCards
+          register={register}
+          errors={errors}
+          promoCode={watchedPromoCode}
+          setValue={setValue}
+          isValid={isValid}
+          isSubmitting={isSubmitting}
+          submitError={submitError}
+        />
+
         <BookingFormLeftCard
           register={register}
           errors={errors}
@@ -105,16 +115,6 @@ const BookingForm = () => {
           selectedDate={watchedSelectedDate}
           promoCode={watchedPromoCode}
           visibleDates={visibleDates}
-        />
-
-        <BookingFormRightCards
-          register={register}
-          errors={errors}
-          promoCode={watchedPromoCode}
-          setValue={setValue}
-          isValid={isValid}
-          isSubmitting={isSubmitting}
-          submitError={submitError}
         />
       </div>
     </form>

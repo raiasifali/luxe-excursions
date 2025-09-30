@@ -1,9 +1,9 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { getExperienceById } from '@/lib/booking-api';
 import ExperienceDetailPageContent from './ExperienceDetailPageContent';
 import { ExperienceDetailProps } from '@/types/experience';
+import { staticExperiences } from '@/components/experiences/static-experiences';
 
 const ExperienceDetailPageWrapper = () => {
   const params = useParams() as { id?: string };
@@ -13,20 +13,34 @@ const ExperienceDetailPageWrapper = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function fetchExperience() {
-      setLoading(true);
-      setError(null);
-      try {
-        if (!id) return;
-        const data = await getExperienceById(id);
-        setExperience(data);
-      } catch (err: any) {
-        setError('Failed to load experience.');
-      } finally {
-        setLoading(false);
+    setLoading(true);
+    setError(null);
+    try {
+      if (!id) return;
+      const found: any = staticExperiences.find((e) => e.id === id);
+      if (!found) {
+        setError('Experience not found.');
+        setExperience(null);
+      } else {
+        // Map static item to ExperienceDetailProps['experience'] shape
+        const mapped: ExperienceDetailProps['experience'] = {
+          id: found.id,
+          title: found.title,
+          description: found.description,
+          location: 'Tenerife',
+          images: found.images || [],
+          highlights: [],
+          bring: '',
+          advice: '',
+          prices: (found.prices || []).map((p: any) => ({ id: p.id, title: p.title, value: String(p.value), currency: p.currency || '£' })),
+        };
+        setExperience(mapped);
       }
+    } catch (err: any) {
+      setError('Failed to load experience.');
+    } finally {
+      setLoading(false);
     }
-    if (id) fetchExperience();
   }, [id]);
 
   if (loading) {

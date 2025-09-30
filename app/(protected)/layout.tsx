@@ -1,5 +1,6 @@
 'use client'
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 
 import Navbar from "@/components/Navbar";
@@ -27,6 +28,7 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
       <Navbar theme={navbarTheme} backgroundColor={navbarBgColor} />
       <main className={`flex-1 ${pathname !== '/' ? 'pt-16' : ''}`}>{children}</main>
       <Footer />
+      <Toaster />
     </div>
   );
 }
